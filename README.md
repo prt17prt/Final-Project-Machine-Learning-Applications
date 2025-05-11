@@ -25,9 +25,10 @@ To build our dataset, we used the PRAW (Python Reddit API Wrapper) library to co
 
 The resulting dataset contains around 10,000 posts and was saved in CSV format for processing later.
 
+<p align="center">
+  <img src="images/csv_head.png">
+</p>
 
-
-*Saved 9802 posts.*
 
 #### 2.2 Preprocessing
 
