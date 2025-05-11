@@ -23,16 +23,18 @@ In this project, we aim to analyze and understand the thematic structure and pop
 #### 2.1 The dataset
 To build our dataset, we used the PRAW (Python Reddit API Wrapper) library to collect the top 1,000 posts from each of ten popular sports-related subreddits: sports, soccer, nba, nfl, baseball, hockey, mma, formula1, tennis, and CFB. For each post, we extracted metadata including the subreddit name, post title, number of upvotes, number of comments, post ID, and creation timestamp. Since the main focus of our project is based on the title text, we discarded other fields like the post body, which were often missing or empty.
 
-The resulting dataset contains around 10,000 posts and was saved in CSV format for subsequent processing.
+The resulting dataset contains around 10,000 posts and was saved in CSV format for processing later.
 
 
 
 #### 2.2 Preprocessing
 
 **Language Detection**
-Before preprocessing the text, we ensured all titles were in English by applying the langdetect library. Titles identified as non-English were filtered out to maintain consistency in language-based modeling.
+
+Before preprocessing the text, we ensured all titles were in English by applying the langdetect library. Titles identified as non-English were filtered out to maintain consistency in the process and in the modeling.
 
 **Text Cleaning and Normalization**
+
 We applied a standard NLP preprocessing pipeline using NLTK, which included:
 
 - Lowercasing all text.
@@ -48,6 +50,7 @@ We applied a standard NLP preprocessing pipeline using NLTK, which included:
 This process resulted in a new column clean_title containing the cleaned and normalized version of each title.
 
 **Vectorization: TF-IDF Representation**
+
 We used the TfidfVectorizer from scikit-learn to convert the cleaned titles into numerical vectors. This method assigns weights to terms based on their frequency across documents while penalizing overly common terms. We experimented with various values for min_df and max_df to find a balance between rare and frequent terms, and we included both unigrams and bigrams to capture common multi-word expressions (e.g., "world cup").
 
 The final TF-IDF matrix was sparse, as expected, and had a shape of (n_posts, 5000), with a low density of non-zero entries, which is typical in this type of textual representation.
