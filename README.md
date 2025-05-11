@@ -100,7 +100,7 @@ For topic modeling, we trained an LDA model using Gensim. After testing several 
 
 We also analyzed topic distributions across subreddits to spot differences in thematic focus.
 
-In regression, the LDA representation yielded an RMSE of 0.9071 ± 0.3849, slightly worse than Doc2Vec but still better than Word2Vec.
+In regression, the LDA representation yielded an RMSE of 0.8626 ± 0.3944, slightly better than Doc2Vec and Word2Vec.
 
 
 
