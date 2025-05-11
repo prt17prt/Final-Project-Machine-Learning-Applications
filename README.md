@@ -41,7 +41,7 @@ Finally, we will plot a graph to see the posts per month in our csv file.
   <img src="images/posts_per_month.png">
 </p>
 
-
+We observe that from 2020 to 2022 and in 2025 are the years with most tweets, which we could take into account for the observation in the dashboard later as we have used dates for different visualizations.
 
 #### 2.2 Preprocessing
 
