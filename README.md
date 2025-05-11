@@ -16,6 +16,8 @@
 
 ## 1. Introduction
 
+In this project, we aim to analyze and understand the thematic structure and popularity patterns of Reddit posts related to sports. Reddit, as one of the most widely used platforms for online discussion, offers great user-generated content across numerous communities (subreddits), particularly those dedicated to sports like football, basketball, or tennis. In order to achieve this, we used some of the tools explained in class about Machine learning tools and Natural Language Processing.
+
 ## 2. Task 1: Text Preprocessing and vectorization
 
 ## 3. Task 2: Recommender Systems
