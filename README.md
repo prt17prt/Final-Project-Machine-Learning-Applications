@@ -96,13 +96,15 @@ This time, no documents had zero vectors, and the representation performed sligh
 
 **LDA (Latent Dirichlet Allocation)**
 
-For topic modeling, we trained an LDA model using Gensim. After testing several values for the number of topics, we selected k = 15 based on coherence scores. Each title was then represented by a 15-dimensional topic distribution vector.
+For topic modeling, we trained an LDA model using Gensim. After testing several values for the number of topics, we selected k = 20 based on coherence scores. Each title was then represented by a 20-dimensional topic distribution vector.
 
 We also analyzed topic distributions across subreddits to spot differences in thematic focus.
 
 In regression, the LDA representation yielded an RMSE of 0.8626 ± 0.3944, slightly better than Doc2Vec and Word2Vec.
 
-
+<p align="center">
+  <img src="images/lda_graph.png">
+</p>
 
 
 # PONER CONCLUSION PARA ESTOS 4 (IGUAL SE PUEDE AÑADIR ALGUNA FOTO TB)
