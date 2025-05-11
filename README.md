@@ -27,6 +27,8 @@ The resulting dataset contains around 10,000 posts and was saved in CSV format f
 
 
 
+*Saved 9802 posts.*
+
 #### 2.2 Preprocessing
 
 **Language Detection**
