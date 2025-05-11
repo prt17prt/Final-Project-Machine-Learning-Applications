@@ -65,19 +65,50 @@ We applied a standard NLP preprocessing pipeline using NLTK, which included:
 
 This process resulted in a new column clean_title containing the cleaned and normalized version of each title.
 
+
+
+#### 2.3 Text Representation and Regression Evaluation
+
+We experimented with four different ways of turning post titles into numerical vectors: TF-IDF, Word2Vec, Doc2Vec, and LDA. These representations were then evaluated by how well they helped a Ridge regression model predict the popularity of a post (measured as log1p(upvotes)) using 5-fold cross-validation.
+
 **Vectorization: TF-IDF Representation**
 
-We used the TfidfVectorizer from scikit-learn to convert the cleaned titles into numerical vectors. This method assigns weights to terms based on their frequency across documents while penalizing overly common terms. We experimented with various values for min_df and max_df to find a balance between rare and frequent terms, and we included both unigrams and bigrams to capture common multi-word expressions (e.g., "world cup").
+We used the TfidfVectorizer from scikit-learn to convert the cleaned titles into numerical vectors. This method assigns weights to terms based on their frequency across documents while penalizing overly common terms.We used a TfidfVectorizer with unigrams and bigrams, limiting the vocabulary to words that appear in at least 5 posts but not in more than 70% of them. This resulted in 4,144 features across 9,802 posts.
 
-The final TF-IDF matrix was sparse, as expected, and had a shape of (n_posts, 5000), with a low density of non-zero entries, which is typical in this type of textual representation.
+The matrix is very sparse (~0.20% non-zero values), which is expected for TF-IDF. Analyzing the idf values, the most common words were general sports terms like "game", "team", or "player", while rarer ones included "achilles" or "acquire".
 
-This vectorized data served as the foundation for subsequent modeling and clustering tasks.
-
-
+The TF-IDF representation achieved a cross-validated RMSE of 0.9157, which served as our baseline.
 
 
+**Word2Vec**
 
-## 3. Task 2: Recommender Systems
+We trained a Word2Vec model locally using Gensim with a 400-dimensional embedding space. Each title was represented by averaging the vectors of its words.
+
+Some documents ended up with zero vectors (about 0.6%) because all their words were out-of-vocabulary (too rare). The performance was slightly worse than TF-IDF, with an RMSE of 0.9491 ± 0.4159.
+
+
+**Doc2Vec**
+
+Unlike Word2Vec, which averages word vectors, Doc2Vec directly learns document-level embeddings. We used the Distributed Memory (DM) variant with 400 dimensions.
+
+This time, no documents had zero vectors, and the representation performed slightly better than the others, reaching an RMSE of 0.8970 ± 0.3992.
+
+
+**LDA (Latent Dirichlet Allocation)**
+
+For topic modeling, we trained an LDA model using Gensim. After testing several values for the number of topics, we selected k = 15 based on coherence scores. Each title was then represented by a 15-dimensional topic distribution vector.
+
+We also analyzed topic distributions across subreddits to spot differences in thematic focus.
+
+In regression, the LDA representation yielded an RMSE of 0.9071 ± 0.3849, slightly worse than Doc2Vec but still better than Word2Vec.
+
+
+
+
+# PONER CONCLUSION PARA ESTOS 4 (IGUAL SE PUEDE AÑADIR ALGUNA FOTO TB)
+
+## 3. Task 2:  Machine Learning model
+
 
 ## 4. Dashboard
 
