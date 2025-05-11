@@ -1,5 +1,13 @@
 # Final-Project-Machine-Learning-Applications
 
+
+100499170: Pablo Ruiz Torralba
+
+100496380: Jesús Navarro Benito 
+
+100466636: Jason Nzondomyo Ngalambude
+
+
 ## 1. Introduction
 
 ## 2. Task 1: Text Preprocessing and vectorization
