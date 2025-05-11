@@ -27,26 +27,27 @@ The resulting dataset contains around 10,000 posts and was saved in CSV format f
 
 
 
+#### 2.2 Preprocessing
 
-Language Detection
+**Language Detection**
 Before preprocessing the text, we ensured all titles were in English by applying the langdetect library. Titles identified as non-English were filtered out to maintain consistency in language-based modeling.
 
-Text Cleaning and Normalization
+**Text Cleaning and Normalization**
 We applied a standard NLP preprocessing pipeline using NLTK, which included:
 
-Lowercasing all text.
+- Lowercasing all text.
 
-Removing URLs.
+- Removing URLs.
 
-Tokenizing titles into words.
+- Tokenizing titles into words.
 
-Removing stopwords and non-alphabetic tokens.
+- Removing stopwords and non-alphabetic tokens.
 
-Lemmatizing words using WordNet.
+- Lemmatizing words using WordNet.
 
 This process resulted in a new column clean_title containing the cleaned and normalized version of each title.
 
-Vectorization: TF-IDF Representation
+**Vectorization: TF-IDF Representation**
 We used the TfidfVectorizer from scikit-learn to convert the cleaned titles into numerical vectors. This method assigns weights to terms based on their frequency across documents while penalizing overly common terms. We experimented with various values for min_df and max_df to find a balance between rare and frequent terms, and we included both unigrams and bigrams to capture common multi-word expressions (e.g., "world cup").
 
 The final TF-IDF matrix was sparse, as expected, and had a shape of (n_posts, 5000), with a low density of non-zero entries, which is typical in this type of textual representation.
