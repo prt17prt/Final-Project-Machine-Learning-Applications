@@ -30,6 +30,19 @@ The resulting dataset contains around 10,000 posts and was saved in CSV format f
 </p>
 
 
+We can also check the distribution per sport, so each sport contains around 1000 posts as mentioned before.
+<p align="center">
+  <img src="images/posts_per_subreddit.png">
+</p>
+
+Finally, we will plot a graph to see the posts per month in our csv file.
+
+<p align="center">
+  <img src="images/posts_per_month.png">
+</p>
+
+
+
 #### 2.2 Preprocessing
 
 **Language Detection**
