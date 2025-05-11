@@ -106,6 +106,8 @@ In regression, the LDA representation yielded an RMSE of 0.8626 ± 0.3944, sligh
   <img src="images/lda_graph.png">
 </p>
 
+We can observe that most of the topics have the same importance for most of the sports. However, we can highlight some of them, like topic 15 for CFB, topic 19 for mma or topic 2 for nfl.
+
 
 # PONER CONCLUSION PARA ESTOS 4 (IGUAL SE PUEDE AÑADIR ALGUNA FOTO TB)
 
