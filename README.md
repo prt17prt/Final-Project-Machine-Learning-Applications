@@ -29,7 +29,16 @@ The resulting dataset contains around 10,000 posts and was saved in CSV format f
   <img src="images/csv_head.png">
 </p>
 
+We can also check the distribution per sport, so each sport contains around 1000 posts as mentioned before.
+<p align="center">
+  <img src="images/posts_per_subreddit.png">
+</p>
 
+Finally, we will plot a graph to see the posts per month in our csv file.
+
+<p align="center">
+  <img src="images/posts_per_month.png">
+</p>
 
 
 We observe that from 2020 to 2022 and in 2025 are the years with most tweets, which we could take into account for the observation in the dashboard later as we have used dates for different visualizations.
