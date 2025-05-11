@@ -1,6 +1,12 @@
 # Final-Project-Machine-Learning-Applications
 
 
+<p align="center">
+  <img src="images/logo_uc3m.png">
+</p>
+
+
+
 100499170: Pablo Ruiz Torralba
 
 100496380: Jesús Navarro Benito 
