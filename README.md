@@ -31,13 +31,13 @@ The resulting dataset contains around 10,000 posts and was saved in CSV format f
 
 We can also check the distribution per sport, so each sport contains around 1000 posts as mentioned before.
 <p align="center">
-  <img src="images/posts_per_subreddit.png">
+  <img src="images/posts_p_subreddit.png">
 </p>
 
 Finally, we will plot a graph to see the posts per month in our csv file.
 
 <p align="center">
-  <img src="images/posts_per_month.png">
+  <img src="images/posts_p_month.png">
 </p>
 
 
