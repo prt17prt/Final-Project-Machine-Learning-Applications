@@ -246,6 +246,8 @@ Workaround: We spun up a separate Conda environment with compatible package vers
 ### 2. Limited Interaction Data Harming ALS Training
 Because extracting user–post interactions from Reddit (via PRAW and Pushshift) proved extremely time- and rate-limited, we restricted ourselves to merely 50 top posts per subreddit and a cap on comment depth. This resulted in a very sparse user×item confidence matrix (only ~8,400 positive interactions for ~500 posts), which prevented our ALS model from learning robust latent factors. Consequently, ALS achieved near-zero Precision@5 on held-out “likes,” and its RMSE improvements were marginal.
 
+Also due to the poor performance, we sometimes deleted code that maybe was not wrong but we thought it was due to poorly results, we later found out that the problem was not on the code but on poor data primarily, that is why in the code itself there won´t be some results mentioned in the report, but we thought it would be good to include those results as it was part of the work in the project 
+
 Lesson Learned: With a larger, more balanced interaction dataset (e.g. scraping >1,000 posts per subreddit), we expect ALS (and other CF methods) to converge to significantly better ranking and prediction performance.
 
 ## 6. Conclusions
