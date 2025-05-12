@@ -268,3 +268,8 @@ Grid searches over TF-IDF thresholds, embedding dimensions, and ALS factors/regu
 The Dash-based dashboard—combining LDA topic distributions, word clouds, and athlete-mention trends—transforms raw model outputs into actionable visuals. Even static captures of the PyLDAvis map provided valuable thematic insights that enrich the overall analytical narrative.
 
 ## 7. References
+
+- Contents from the Machine learning applications 23/24-S2 course, as we were inspired and followed some of the codes and theory learned during the course.
+- **Github** for colaborative work and for the submission of the project.
+- **Reddit** for the gathering of posts for the creation of the dataset.
+- **ChatGPT** used for help with some plots in the dashboard and some small code errors fixing.
