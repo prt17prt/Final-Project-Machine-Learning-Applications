@@ -113,6 +113,15 @@ We can observe that most of the topics have the same importance for most of the 
 
 ## 3. Task 2:  Machine Learning model
 
+als scores:
+<p align="center">
+  <img src="images/als_scores.jpeg">
+</p>
+
+als scores with hyperparameters:
+<p align="center">
+  <img src="images/als_scores_hyperparam.jpeg">
+</p>
 
 ## 4. Dashboard
 
