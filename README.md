@@ -125,10 +125,16 @@ Latent-factor CF with Implicit’s Alternating Least Squares (ALS) and Surprise�
 Our goal was to measure predictive accuracy (RMSE/MAE) on held-out ratings and ranking quality (Precision@5). 
 
 ### 1. Content-Based k-NN
-We used the all-MiniLM-L6-v2 sentence encoder to vectorize each Reddit title into a 384-dimensional embedding. A cosine‐distance k-NN index then returns the top-5 most similar posts for any query (filtering out sims > 0.9 to avoid near-duplicates) 
 
+Representation: We encoded each post’s cleaned title into a 384-dimensional SentenceTransformer embedding (all-MiniLM-L6-v2).
 
-Precision@5 on our implicit “like” test set was 0.0031, indicating very few held-out liked posts appear in the top-5 recommendations. Similar low recall and NDCG scores were observed, suggesting limited utility when only title text is used 
+Method: A simple k-NN index (cosine distance) returns the top-5 most similar posts for any query, filtering out near-duplicates (similarity ≥ 0.9).
+
+Example Output: ![image](https://github.com/user-attachments/assets/41c7f7bd-cc5b-4d3f-9a0d-2f1eddf44dd6)
+
+Evaluation (Precision@5): 0.0031
+On our held-out “like” test set (binary comment/upvote interactions), only ~0.3 % of true positives appeared in the top-5 recommendations. This low hit rate underscores the limitations of title text alone for recalling user preferences.
+
 
 ### 2. Item-Based KNN (Collaborative)
 We constructed a binary user–post interaction matrix from comment upvotes (rating=1) and trained Surprise’s KNNBasic with cosine similarity (item-based mode) 
